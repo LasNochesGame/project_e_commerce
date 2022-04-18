@@ -1,0 +1,8 @@
+<%= @shop.corporate_name %>
+<%= @shop.cnpj %>
+<%= @shop.address %>
+<%= @shop.city %>
+<%= @shop.state %>
+<%= @shop.manager %>
+<%= link_to 'Editar', edit_shop_path(shop) %>
+<%= button_to 'Apagar', shop_path(shop), method: :delete %><br>

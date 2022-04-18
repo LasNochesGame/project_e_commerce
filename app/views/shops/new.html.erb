@@ -1,0 +1,15 @@
+<%= form_for Shop.new do |s|%>
+    <%= s.label :corporate_name, 'Razão Social'%>
+    <%= s.text_field :corporate_name %>
+    <%= s.label :cnpj, 'CNPJ'%>
+    <%= s.number_field :cnpj%>
+    <%= s.label :address, 'Endereço'%>
+    <%= s.text_field :address%>
+    <%= s.label :city, 'Cidade'%>
+    <%= s.text_field :city%>
+    <%= s.label :state, 'Estado'%>
+    <%= s.text_field :state %>
+    <%= s.label :manager, 'Gerente'%>
+    <%= s.text_field :manager %>
+    <%= s.submit 'Registrar'%>
+<% end %>
