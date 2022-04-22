@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ecommercev2</title>
+    <title>APP DO RODRIGO</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/edge/stylesheets/locastyle.css">
-    <%= javascript_importmap_tags %>
-  </head>
-
-  <body>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
-
-    <%= yield %>
-    <script src="//assets.locaweb.com.br/locastyle/edge/javascripts/locastyle.js"></script>
+  </head>
+  <body>
+    <header>
+    <div><h1><strong>//</strong> APP DO RODRIS <strong>//</strong></h1></div>
+    </header>
+    <main>
+      <%= flash[:notice] %></p>
+      <%= flash[:alert] %></p>
+      <%= yield %>
+    </main>
   </body>
-  
 </html>

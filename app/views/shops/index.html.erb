@@ -1,51 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Lojas</title>
-</head>
-<body>
-    <nav>
 
-    </nav>
-
-    <header>
-
-    </header>
-
-    <main class= "user_table_list">
-        <table class="ls-table ls-bg-header ls-sm-space ">
-            <thead>
-                <tr>
-                <th class="hidden-xs">Razão Social</th>
-                <th>CNPJ</th>
-                <th class="hidden-xs">Endereço</th>
-                <th>Cidade / Estado</th>
-                <th class="hidden-xs">Gerente</th>
-                <th>Ação</th>
-                </tr>
-            </thead>
-            <tbody>
                 <% @shops.each do |shop| %>
                     <tr>
-                    <td class="hidden-xs"><%= shop.corporate_name %></td>
+                    <td><%= shop.corporate_name %></td>
                     <td><%= shop.cnpj %></td>
-                    <td class="hidden-xs"><%= shop.address %></td>
+                    <td><%= shop.address %></td>
                     <td><%= shop.city %> / <%= shop.state %></td>
                     <td><%= shop.manager %></td>
-                    <td class="hidden-xs"><%= link_to 'Editar', edit_shop_path(shop) %>
+                    <td><%= link_to 'Editar', edit_shop_path(shop) %>
                         <%= button_to 'Apagar', shop_path(shop), method: :delete %></td>
                     </tr>
                 <% end %>
-            </tbody>
-        </table>
-    </main>
-
-    <footer>
-
-    </footer>
-</body>
-</html>
 

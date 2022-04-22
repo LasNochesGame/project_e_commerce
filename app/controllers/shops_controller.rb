@@ -1,5 +1,5 @@
 class ShopsController < ApplicationController
-    layout 'login_layout'
+
     def new
         @shop = Shop.new
     end
