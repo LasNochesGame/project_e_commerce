@@ -1,11 +1,17 @@
 class ShopsController < ApplicationController
+    layout 'login_layout'
     def new
+        @shop = Shop.new
     end
 
     def create
         @shop = Shop.new (params.require(:shop).permit(:corporate_name, :cnpj, :address, :city, :state, :manager))
-        @shop.save
-        redirect_to root_path
+        if @shop.save
+            redirect_to root_path, notice: 'Loja Registrada Com Sucesso'
+        else
+            flash.now[:alert] = 'Não Foi Possível Registrar a Loja'
+            render 'new'
+        end
     end
 
     def edit
@@ -20,8 +26,8 @@ class ShopsController < ApplicationController
 
     def destroy
         shop = Shop.find(params[:id])
-        shop.destroy
-        redirect_to root_path
+        shop.delete
+        redirect_to root_path, notice: 'Loja Deletada Com Sucesso'
     end
 
     def index

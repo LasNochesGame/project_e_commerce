@@ -7,10 +7,15 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/edge/stylesheets/locastyle.css">
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    
+
     <%= yield %>
+    <script src="//assets.locaweb.com.br/locastyle/edge/javascripts/locastyle.js"></script>
   </body>
+  
 </html>

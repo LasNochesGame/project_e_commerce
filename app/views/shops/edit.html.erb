@@ -1,15 +1,44 @@
-<%= form_for @shop do |s|%>
-    <%= s.label :corporate_name, 'Razão Social'%>
-    <%= s.text_field :corporate_name %>
-    <%= s.label :cnpj, 'CNPJ'%>
-    <%= s.number_field :cnpj%>
-    <%= s.label :address, 'Endereço'%>
-    <%= s.text_field :address%>
-    <%= s.label :city, 'Cidade'%>
-    <%= s.text_field :city%>
-    <%= s.label :state, 'Estado'%>
-    <%= s.text_field :state %>
-    <%= s.label :manager, 'Gerente'%>
-    <%= s.text_field :manager %>
-    <%= s.submit 'Registrar Edição'%>
-<% end %>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Lojas</title>
+</head>
+<body>
+    <header class="navegation">
+        <nav class="navbutton">
+            <%= link_to 'HOME', root_path %>
+            <%= link_to 'NOTICIAS', root_path %>
+            <%= link_to 'INDIQUE', root_path %>
+            <%= link_to 'AJUDA', root_path %>
+        </nav>
+    </header>
+
+    <main>
+        <h2> Edite Sua Loja Aqui </h2><br>
+
+        <%= form_for @shop do |s|%>
+            <%= s.label :corporate_name, 'Razão Social'%>
+            <%= s.text_field :corporate_name %>
+            <%= s.label :cnpj, 'CNPJ'%>
+            <%= s.number_field :cnpj%>
+            <%= s.label :address, 'Endereço'%>
+            <%= s.text_field :address%>
+            <%= s.label :city, 'Cidade'%>
+            <%= s.text_field :city%>
+            <%= s.label :state, 'Estado'%>
+            <%= s.text_field :state %>
+            <%= s.label :manager, 'Gerente'%>
+            <%= s.text_field :manager %>
+            <%= s.submit 'Registrar Edição'%>
+        <% end %>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
+

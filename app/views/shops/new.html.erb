@@ -1,15 +1,48 @@
-<%= form_for Shop.new do |s|%>
-    <%= s.label :corporate_name, 'Razão Social'%>
-    <%= s.text_field :corporate_name %>
-    <%= s.label :cnpj, 'CNPJ'%>
-    <%= s.number_field :cnpj%>
-    <%= s.label :address, 'Endereço'%>
-    <%= s.text_field :address%>
-    <%= s.label :city, 'Cidade'%>
-    <%= s.text_field :city%>
-    <%= s.label :state, 'Estado'%>
-    <%= s.text_field :state %>
-    <%= s.label :manager, 'Gerente'%>
-    <%= s.text_field :manager %>
-    <%= s.submit 'Registrar'%>
-<% end %>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Lojas</title>
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <main class= "newshop">
+        <h2> Cadastre Sua Loja Aqui </h2><br>
+
+        <%= form_for Shop.new do |s|%>
+
+        <% if @shop.errors.any? %>
+            <span>Verifique os Campos Abaixo:</span>
+            <ul>
+            <% @shop.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+            </ul>
+        <% end %>
+
+            <%= s.label :corporate_name, 'Razão Social'%><br>
+            <%= s.text_field :corporate_name %><br>
+            <%= s.label :cnpj, 'CNPJ'%><br>
+            <%= s.number_field :cnpj%><br>
+            <%= s.label :address, 'Endereço'%><br>
+            <%= s.text_field :address%><br>
+            <%= s.label :city, 'Cidade'%><br>
+            <%= s.text_field :city%><br>
+            <%= s.label :state, 'Estado'%><br>
+            <%= s.text_field :state %><br>
+            <%= s.label :manager, 'Gerente'%><br>
+            <%= s.text_field :manager %><br>
+            <%= s.submit 'Registrar'%>
+        <% end %>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

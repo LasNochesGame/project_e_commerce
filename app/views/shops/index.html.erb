@@ -7,41 +7,40 @@
     <title>Lista de Lojas</title>
 </head>
 <body>
-    <input type="checkbox" id="check">
-    <label for="check">
-        <%= image_tag 'ico_menu.png' %>
-    </label>
-    
-    <nav class="menu">
-        <ul>
-            <li><a href="#">Visualizar Todas as Lojas</a>
-            <li><a href="#">Visualizar Todos os Gerentes</a>
-            <li><a href="#">Procurar por CNPJ</a>
-            <li><a href="#">Procurar por Endereço</a>
-            <li><a href="#">Procurar Cidade/Estado</a>
-        </ul>
+    <nav>
+
     </nav>
 
-    <header class="navegation">
-        <a href="#">Home</a>
-        <a href="#">Noticias</a>
-        <a href="#">Indique</a>
-        <a href="#">Ajuda</a>
+    <header>
+
     </header>
 
-    <main>
-       <% @shops.each do |shop| %>
-    <div>
-        <div><%= shop.corporate_name %></div>
-        <div><%= shop.cnpj %></div>
-        <div><%= shop.address %></div>
-        <div><%= shop.city %></div>
-        <div><%= shop.state %></div>
-        <div><%= shop.manager %></div>
-        <%= link_to 'Editar', edit_shop_path(shop) %>
-        <%= button_to 'Apagar', shop_path(shop), method: :delete %><br>
-    </div>
-    <% end %>
+    <main class= "user_table_list">
+        <table class="ls-table ls-bg-header ls-sm-space ">
+            <thead>
+                <tr>
+                <th class="hidden-xs">Razão Social</th>
+                <th>CNPJ</th>
+                <th class="hidden-xs">Endereço</th>
+                <th>Cidade / Estado</th>
+                <th class="hidden-xs">Gerente</th>
+                <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @shops.each do |shop| %>
+                    <tr>
+                    <td class="hidden-xs"><%= shop.corporate_name %></td>
+                    <td><%= shop.cnpj %></td>
+                    <td class="hidden-xs"><%= shop.address %></td>
+                    <td><%= shop.city %> / <%= shop.state %></td>
+                    <td><%= shop.manager %></td>
+                    <td class="hidden-xs"><%= link_to 'Editar', edit_shop_path(shop) %>
+                        <%= button_to 'Apagar', shop_path(shop), method: :delete %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
     </main>
 
     <footer>
