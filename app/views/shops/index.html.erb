@@ -1,13 +1,27 @@
-
-                <% @shops.each do |shop| %>
-                    <tr>
-                    <td><%= shop.corporate_name %></td>
-                    <td><%= shop.cnpj %></td>
-                    <td><%= shop.address %></td>
-                    <td><%= shop.city %> / <%= shop.state %></td>
-                    <td><%= shop.manager %></td>
-                    <td><%= link_to 'Editar', edit_shop_path(shop) %>
-                        <%= button_to 'Apagar', shop_path(shop), method: :delete %></td>
-                    </tr>
-                <% end %>
-
+<div class="bodyindex">
+    <table class="ls-table">
+    <thead>
+            <tr>
+            <th class="hidden-xs">Razão Social</th>
+            <th>CNPJ</th>
+            <th class="hidden-xs">Endereço</th>
+            <th>Cidade / Estado</th>
+            <th class="hidden-xs">Gerente</th>
+            <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @shops.each do |shop| %>
+                <tr>
+                <td class="hidden-xs"><%= shop.corporate_name %></td>
+                <td><%= shop.cnpj %></td>
+                <td class="hidden-xs"><%= shop.address %></td>
+                <td><%= shop.city %> / <%= shop.state %></td>
+                <td><%= shop.manager %></td>
+                <td class="hidden-xs"><%= link_to 'Editar', edit_shop_path(shop) %>
+                    <%= button_to 'Apagar', shop_path(shop), method: :delete %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

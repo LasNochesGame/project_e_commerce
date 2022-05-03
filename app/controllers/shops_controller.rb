@@ -1,4 +1,5 @@
 class ShopsController < ApplicationController
+    layout 'application_user'
 
     def new
         @shop = Shop.new

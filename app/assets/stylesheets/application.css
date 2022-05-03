@@ -30,3 +30,17 @@
     left: 20%;
     top: 5%;
 }
+
+.bodyhome {
+    position: relative;
+    left: 20%;
+    top: 10%;
+    width: 75%;
+}
+
+.bodyindex {
+    position: relative;
+    top: 10%;
+    left: 5%;
+    width: 75%;
+}

@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="//assets.locaweb.com.br/locastyle/edge/stylesheets/locastyle.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
   </head>
   <body>
     <header>
-    <div><h1><strong>//</strong> APP DO RODRIS <strong>//</strong></h1></div>
     </header>
     <main>
+
       <%= flash[:notice] %></p>
       <%= flash[:alert] %></p>
       <%= yield %>
+
+      <script src="//assets.locaweb.com.br/locastyle/edge/javascripts/locastyle.js"></script>
     </main>
   </body>
 </html>

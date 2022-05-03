@@ -1,29 +1,44 @@
+<div class="newshop">
 
-        <h2> Cadastre Sua Loja Aqui </h2><br>
+    <h2> Cadastre Sua Loja Aqui </h2><br>
 
-        <%= form_for Shop.new do |s|%>
+    <%= form_for Shop.new do |s|%>
 
-        <% if @shop.errors.any? %>
-            <span>Verifique os Campos Abaixo:</span>
-            <ul>
-            <% @shop.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-            </ul>
+    <% if @shop.errors.any? %>
+        <span>Verifique os Campos Abaixo:</span><br><br>
+    <% end %>
+
+        <%= s.label :corporate_name, 'Razão Social'%><br>
+        <%= s.text_field :corporate_name %><br>
+        <% @shop.errors.full_messages_for(:corporate_name).each do |msg| %>
+            <li><%= "Esse Campo deve ser preenchido" %></li>
         <% end %>
-
-            <%= s.label :corporate_name, 'Razão Social'%><br>
-            <%= s.text_field :corporate_name %><br>
-            <%= s.label :cnpj, 'CNPJ'%><br>
-            <%= s.number_field :cnpj%><br>
-            <%= s.label :address, 'Endereço'%><br>
-            <%= s.text_field :address%><br>
-            <%= s.label :city, 'Cidade'%><br>
-            <%= s.text_field :city%><br>
-            <%= s.label :state, 'Estado'%><br>
-            <%= s.text_field :state %><br>
-            <%= s.label :manager, 'Gerente'%><br>
-            <%= s.text_field :manager %><br>
-            <%= s.submit 'Registrar'%>
+        <%= s.label :cnpj, 'CNPJ'%><br>
+        <%= s.number_field :cnpj%><br>
+        <% @shop.errors.full_messages_for(:cnpj).each do |msg| %>
+            <li><%= "Esse Campo deve ser preenchido" %></li>
         <% end %>
-  
+        <%= s.label :address, 'Endereço'%><br>
+        <%= s.text_field :address%><br>
+        <% @shop.errors.full_messages_for(:address).each do |msg| %>
+            <li><%= "Esse Campo deve ser preenchido" %></li>
+        <% end %>
+        <%= s.label :city, 'Cidade'%><br>
+        <%= s.text_field :city%><br>
+        <% @shop.errors.full_messages_for(:city).each do |msg| %>
+            <li><%= "Esse Campo deve ser preenchido" %></li>
+        <% end %>
+        <%= s.label :state, 'Estado'%><br>
+        <%= s.text_field :state %><br>
+        <% @shop.errors.full_messages_for(:state).each do |msg| %>
+            <li><%= "Esse Campo deve ser preenchido" %></li>
+        <% end %>
+        <%= s.label :manager, 'Gerente'%><br>
+        <%= s.text_field :manager %><br>
+        <% @shop.errors.full_messages_for(:manager).each do |msg| %>
+            <li><%= "Esse Campo deve ser preenchido" %></li>
+        <% end %>
+        <%= s.submit 'Registrar'%>
+    <% end %>
+    
+</div>
