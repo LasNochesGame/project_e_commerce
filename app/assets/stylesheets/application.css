@@ -44,3 +44,22 @@
     left: 5%;
     width: 75%;
 }
+
+.welcomescreen {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0, 0, 0, 0.877);
+    position: absolute;
+    top: 30%;
+    left: 38%;
+    border-radius: 15px;
+    padding: 80px;
+    color: #fff;
+}
+
+.loginbotton {
+    text-align: center;
+}
+
+.alerts_message {
+    text-align: center;
+}

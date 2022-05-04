@@ -1,49 +1,60 @@
-<div class="bodyhome">
-    <div class="ls-list">
-        <header class="ls-list-header">
-            <div class="ls-list-title col-md-9">
-            <a href="#" >Lista de Lojas</a>
-            <small>Todas as Lojas Registradas  </small>
-            </div>
-            <div class="col-md-3 ls-txt-right">
-            <%= link_to 'Administrar', shops_path, :class => "ls-btn-primary" %>
-            </div>
+<% if user_signed_in?%>
+
+    <div class="bodyhome">
+        <div class="ls-list">
+            <header class="ls-list-header">
+                <div class="ls-list-title col-md-9">
+                <a href="#" >Lista de Lojas</a>
+                <small>Todas as Lojas Registradas  </small>
+                </div>
+                <div class="col-md-3 ls-txt-right">
+                <%= link_to 'Administrar', shops_path, :class => "ls-btn-primary" %>
+                </div>
+            </header>
+        </div>
+
+        <div class="ls-list">
+            <header class="ls-list-header">
+                <div class="ls-list-title col-md-9">
+                <a href="#" >Nova Loja</a>
+                <small>Adicione Uma Nova Loja a Lista  </small>
+                </div>
+                <div class="col-md-3 ls-txt-right">
+                <%= link_to 'Administrar', new_shop_path, :class => "ls-btn-primary" %>
+                </div>
         </header>
+        </div>
+
+        <div class="ls-list">
+            <header class="ls-list-header">
+                <div class="ls-list-title col-md-9">
+                <a href="#" >Lista de Registros</a>
+                <small>Histórico de todas as lojas registradas até o momento   </small>
+                </div>
+                <div class="col-md-3 ls-txt-right">
+                <a href="#" class="ls-btn-primary">Administrar</a>
+                </div>
+            </header>
+        </div>
+
+        <div class="ls-list">
+            <header class="ls-list-header">
+                <div class="ls-list-title col-md-9">
+                <a href="#" >Lista de Gerentes</a>
+                <small>Todos os gerentes e as lojas relacionadas  </small>
+                </div>
+                <div class="col-md-3 ls-txt-right">
+                <a href="#" class="ls-btn-primary">Administrar</a>
+                </div>
+            </header>
+        </div>
     </div>
 
-    <div class="ls-list">
-        <header class="ls-list-header">
-            <div class="ls-list-title col-md-9">
-            <a href="#" >Nova Loja</a>
-            <small>Adicione Uma Nova Loja a Lista  </small>
-             </div>
-            <div class="col-md-3 ls-txt-right">
-            <%= link_to 'Administrar', new_shop_path, :class => "ls-btn-primary" %>
-            </div>
-     </header>
-    </div>
+<% else %>
 
-    <div class="ls-list">
-        <header class="ls-list-header">
-            <div class="ls-list-title col-md-9">
-            <a href="#" >Lista de Registros</a>
-            <small>Histórico de todas as lojas registradas até o momento   </small>
-            </div>
-            <div class="col-md-3 ls-txt-right">
-            <a href="#" class="ls-btn-primary">Administrar</a>
-            </div>
-        </header>
-    </div>
-
-    <div class="ls-list">
-        <header class="ls-list-header">
-            <div class="ls-list-title col-md-9">
-            <a href="#" >Lista de Gerentes</a>
-            <small>Todos os gerentes e as lojas relacionadas  </small>
-            </div>
-            <div class="col-md-3 ls-txt-right">
-            <a href="#" class="ls-btn-primary">Administrar</a>
-            </div>
-        </header>
-    </div>
+<div class= "welcomescreen">
+   <h2>Olá, antes de começar, é preciso logar</h1>
+   <div class="loginbotton"><%= link_to 'LOGIN', user_session_path, :class => "ls-btn-primary" %></div>
 </div>
+
+<% end %>

@@ -13,9 +13,10 @@
     <header>
     </header>
     <main>
-
-      <%= flash[:notice] %></p>
-      <%= flash[:alert] %></p>
+      <div class="alerts_message">
+      <p><%= flash[:notice] %></p>
+      <p><%= flash[:alert] %></p>
+      </div>
       <%= yield %>
 
       <script src="//assets.locaweb.com.br/locastyle/edge/javascripts/locastyle.js"></script>
